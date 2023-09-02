@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: hsl(249, 99%, 64%);
+  /*Linear gradient (active input border) => blue to purple*/
+  --purple: hsl(278, 94%, 30%);
+  --red: hsl(0, 100%, 66%); /*(input errors)*/
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --dark-grayish-violet-opacity: hsla(279, 6%, 55%, 0.3);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  --grey: hsla(0, 0%, 43.922%, 0.47843);
+
+  --font-family-space: "Space Grotesk", sans-serif;
+}
+
+body {
+  /*flex column*/
+  width: 100vw;
+  height: 100vh;
+
+  font-family: var(--font-family-space);
+  font-weight: 500;
+  font-size: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+/*=========================================
+DIVISION DE LA PÁGINA
+CARDS SECTION y FORM CARDS
+*/
+.main-container__cards-section {
+  /*flex row*/
+  width: 100%;
+  height: 250px;
+  background-image: url(../images/bg-main-mobile.png);
+  background-size: cover;
+
+  position: relative;
+
+  justify-content: center;
+}
+
+.main-container__form-section {
+  /*flex row*/
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  background-color: var(--white);
+  color: var(--very-dark-violet);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  padding: 4.6em 2em 2em;
+
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.form_cards-container {
+  width: 100%;
+}
+
+.main-container__thanks-section {
+  /*flex column*/
+  display: none;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--very-dark-violet);
+  padding: 4.6em 2em 2em;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.main-container__thanks-section img {
+  width: min-content;
+}
+
+.main-container__thanks-section h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.main-container__thanks-section p {
+  color: var(--dark-grayish-violet);
+}
+
+/*=========================================
+CARDS
+*/
+.cards_group {
+  position: relative;
+}
+
+.card {
+  width: 18em;
+  height: 10em;
+
+  background-size: cover;
+
+  color: var(--white);
+  border-radius: 10px;
+
+  position: relative;
+}
+
+.front_card {
+  background-image: url(../images/bg-card-front.png);
+  bottom: -8em;
+  left: -10%;
+  z-index: 10;
+
+  padding: 1em;
+}
+
+.front_card .card__logo {
+  width: 60px;
+}
+
+.front_card .card__numbers {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 2em;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.front_card .card__details {
+  /*flex row*/
+  justify-content: space-between;
+  margin-top: 0.8em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1em;
+}
+
+.back_card {
+  background-image: url(../images/bg-card-back.png);
+  bottom: 8em;
+  left: 10%;
+}
+
+.back_card span {
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  font-size: 0.7rem;
+}
+
+/*
+===========================================
+FLEX
+*/
+
+.flex {
+  display: flex;
+  gap: 0.6em;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex input {
+  outline: none;
+
+  padding: 0.8em;
+  border: 1px solid var(--dark-grayish-violet-opacity);
+  border-radius: 5px;
+  letter-spacing: 1px;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  font-family: var(--font-family-space);
+}
+
+.flex input::placeholder {
+  color: var(--grey);
+}
+
+.form_group2 {
+  width: 50%;
+}
+
+.form_group3 input {
+  width: 90%;
+}
+
+/*
+===============================================
+BUTTON
+*/
+
+#btn-confirm,
+#btn-continue {
+  margin-top: 0.7em;
+  padding: 1em;
+  color: var(--white);
+  font-family: var(--font-family-space);
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: var(--very-dark-violet);
+  cursor: pointer;
+}
+
+#btn-continue {
+  width: 50%;
+}
+
+/*
+===============================================
+VALIDATIONS
+*/
+
+.wrong-format {
+  color: #f00;
+  text-transform: initial;
+  font-size: 0.7rem;
+}
+
+/*
+===============================================
+ATTRIBUTION
+*/
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+-->
+
+/*
+===============================================
+MEDIA QUERIES FOR BIGGER SCREENS
+*/
+
+@media screen and (min-width: 870px) {
+  body {
+    /*flex row*/
+    flex-direction: row;
+  }
+  .main-container__cards-section {
+    /*flex*/
+    width: 500px;
+    height: 100%;
+    background-image: url(../images/bg-main-desktop.png);
+
+    align-items: center;
+  }
+
+  .main-container__form-section {
+    width: 100%;
+    padding: 10em;
+  }
+
+  .form_cards-container {
+    width: 30em;
+  }
+
+  .card {
+    width: 21em;
+    height: 11em;
+  }
+
+  .front_card {
+    bottom: 1em;
+    left: 3.6em;
+  }
+
+  .front_card .card__numbers {
+    /*flex*/
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .back_card {
+    bottom: -1em;
+    left: 7em;
+  }
+
+  .back_card span {
+    top: 47%;
+    right: 12%;
+  }
+}
